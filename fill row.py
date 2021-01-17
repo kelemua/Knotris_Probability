@@ -1,11 +1,11 @@
 """
 Created on Tue Dec 17 15:21:56 2019
-Last Modified: 1/20/2020                                   
 
 This code: 
-- Assembles all row permutations of a given cluster of tiles 
-- Keeps only the rows that are suitably connected  
-- Records the unique boundary conditions and corresponding frequency among the rows 
+- Executes the filling a row algorithm
+    - Assembles all row permutations of a given cluster of tiles 
+    - Keeps only the rows that are suitably connected  
+    - Records the unique boundary conditions and corresponding frequency among the rows 
 
 @author: Kelemua Tesfaye
 """
@@ -174,7 +174,6 @@ def writeIntoCSV(boundaryCounter):#FIX ME!!
         writer.writeheader()
         for key in boundaryCounter:
             writer.writerow({'Boundary': key, 'Frequency': boundaryCounter[key]})
-        
     """
     global boundaryCombs
     boundaryFrequency = []
@@ -242,7 +241,7 @@ if __name__ == '__main__':
               [tiles['t7'][1]]]
     
     #6 tiles cluster only containing one type of tile 
-    #a???, where ??? is the tile type in the list
+    #a???, where ??? is the only tile type in the cluster
     aBlank = [[tiles['t0'][1]], [tiles['t0'][1]], [tiles['t0'][1]], [tiles['t0'][1]], [tiles['t0'][1]] ,[tiles['t0'][1]]]
     aLine = [lines, lines, lines, lines, lines, lines]
     aElbow = [elbows, elbows, elbows, elbows, elbows, elbows]
@@ -260,7 +259,7 @@ if __name__ == '__main__':
     boundary(clusterPermsSC)
     writeIntoCSV(boundaryCounter)
 
-
+    
 """
 #find all boundary conditions for a 1x6 row
     pickCP = [0,1]
