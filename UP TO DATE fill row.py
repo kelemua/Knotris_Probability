@@ -289,8 +289,8 @@ def boundary(uniRowPermutsSC):
 
 
 
-#NOTE: Console may not be able to see entriety of print statements becuase of length
-    #If you would like ot view all print statements at once consider:
+#NOTE: Console may not be able display entriety of print statements because of length
+    #If you would like ot view BC and frequency of all bags once consider:
         #1)Commenting lines 266-272 (if lines don't match up perfectly there is a note at the lines where to comment)  -OR-
         #2)Running a few bags at a time
 #NOTE: NONE of the arguments of the functions should be changed only the value of bag 
