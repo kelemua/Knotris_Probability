@@ -9,5 +9,9 @@ This repository houses the code for the Python probability simulations for the g
          - Outputs the unique lower boundary condition of the realizable suitably connected row and respective frequency
       - The purpose of this was to determine how constraints on the tile bag impacted gameplay. 
   - Fill Hole
-      - Contains functions that calculate the probability of filling a hole in Knotris 
-      - ...Still In Progress...
+      - Calculate the probability of filling a hole in Knotris 
+        - The probability of 1 through 3 tile hole types where are all edges are determined are complete
+        - I'm stil working on:
+            - Some of the hole 3 tile hole types with free edges
+            - Calculating both the randumb and smart probability for filling holes 
+            - Creating an some interface so a user can enter a hole type in a more user friendly way and the probability of filling the hole is returned 
