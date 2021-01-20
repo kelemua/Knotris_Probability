@@ -41,7 +41,7 @@ lines = [tiles['t4'][1], tiles['t6'][1]]
 
 #try with individual tiles instead of equivalence classes
 #defined bags using individual tiles instead of equivalence classes 
-sevenTileBag = [tiles['t0'][1], #blank
+sevenTileBag = [tiles['t0'][1], #blank      #7-tile bag was the bag we found that led to the most natural gameplay
                 
                 tiles['t4'][1], tiles['t6'][1], #line class
                 tiles['t4'][1], tiles['t6'][1], #line class
@@ -53,7 +53,7 @@ sevenTileBag = [tiles['t0'][1], #blank
                 tiles['t9'][1], #crossing
                 ]
 
-#gamebag is composed of 3 of the 7-tle bags 
+#Gamebag is composed of 3 of the 7-tle bags. This is the bag that supplied tiles to the player during gameplay.
 gamebag = [tiles['t0'][1], #blank
            tiles['t0'][1], 
            tiles['t0'][1], 
