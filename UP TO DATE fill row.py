@@ -287,12 +287,36 @@ def boundary(uniRowPermutsSC):
             
     return boundarySC
 
+def color(uniRowPermutsSC):  #Doesn't have much of a purpose. Just cool to try colored text in python.
+    """
+    Color takes a list of boundary condition of unique SC rows, uniRowPermutsSC, and prints the color
+    coded BCs with no commas or parantheses along with the frequency of the BC among the rows. 
+    """
+    global boundaryCounter 
+    
+    from colorama import Fore, Style, Back
+    
+    print('\nSuitably Connected Rows')
+    print('Boundary Condition|Frequency')
+    for i in range(len(set(uniRowPermutsSC))):   #BC
+        print('    ', end = '')
+        for j in range(len(uniRowPermutsSC[i])): #tile
+            if uniRowPermutsSC[i][j] == 1:
+                print(Fore.BLUE + '''1''', end = ' ')
+            else: 
+                print(Fore.RED + '''0''', end = ' ')
+            if j == 5:
+                print(Fore.GREEN +'      ',boundaryCounter[uniRowPermutsSC[i]])
+    
+    print(Style.RESET_ALL)
+    return
 
 
 #NOTE: Console may not be able display entriety of print statements because of length
     #If you would like ot view BC and frequency of all bags once consider:
         #1)Commenting lines 266-272 (if lines don't match up perfectly there is a note at the lines where to comment)  -OR-
-        #2)Running a few bags at a time
+        #2)Comment all the lines that execute the boundary function (e.g. lines 326, 333, 341, 348)
+        #3)Running a few bags at a time
 #NOTE: NONE of the arguments of the functions should be changed only the value of bag 
 print('\n**GAMEBAG**')
 bag = gamebag      #can use any of the bags defined at the top or any list of 6 or more 4-element tuples 
