@@ -1,5 +1,5 @@
 # Knotris_Probability
-This repository houses 2 files: 
+This repository houses the code for the Python probability simulations for the game Knotris. To play the game, check out izook.github.io/knotris/! To learn about the game mechanics, read our Math Horizons article, Knotris: A Game Inspired by Knot Theory at https://www.tandfonline.com/doi/full/10.1080/10724117.2020.1809238.
   - Fill Hole 
       - Contains functions that calculate the probability of filling a hole in Knotris 
   - Fill Row
