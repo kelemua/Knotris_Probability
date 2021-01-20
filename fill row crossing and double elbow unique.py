@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Jan 17 14:46:51 2021
-
+This code exectues the Filling a Row algorithm. 
 @author: Kelemua Tesfaye
 """
 #Dictionary defining the 11 knot mosaic tiles   
@@ -172,7 +172,6 @@ def combos(tilebag):
     
     return uniRowCombos
 
-
 def permuts(uniRowCombos):
     """
     permutations unique b/c combos were unique
@@ -274,7 +273,7 @@ def boundary(uniRowPermutsSC):
 
 #NOTE Console may not be able to see entriety of print statements becuase of length
     #If you would like ot view all print statements at once consider:
-        #1)Commenting lines 252-258 (if lines don't match up perfectly there is a note at the lines where to comment)  -OR-
+        #1)Commenting lines 251-257 (if lines don't match up perfectly there is a note at the lines where to comment)  -OR-
         #2)Running a few bags at a time
 #Note NONE of the arguments of the functions should be changed only the value of bag 
 print('\n**GAMEBAG**')
