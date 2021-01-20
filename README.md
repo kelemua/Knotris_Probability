@@ -8,5 +8,6 @@ This repository houses the code for the Python probability simulations for the g
          - Only the suitaly connected rows are kept
          - Outputs the unique lower boundary condition of the realizable suitably connected row and respective frequency
       - The purpose of this was to determine how constraints on the tile bag impacted gameplay. 
-  - Fill Hole 
+  - Fill Hole
       - Contains functions that calculate the probability of filling a hole in Knotris 
+      - ...Still In Progress...
