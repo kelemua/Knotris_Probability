@@ -2,7 +2,7 @@
 """
 Created on Tue Dec 17 15:21:56 2020
 
-This code excutes the filling a row algorithm. 
+This code excutes the filling a row algorithm using the Knotris gamebag. 
 
 @author: Kelemua Tesfaye
 """
@@ -37,33 +37,19 @@ tiles['t9'] = ('crossVUnder', (1,1,1,1,1))      #the BC tuple has an additional 
 
 #equivalence classes defined by rotation equivalence 
 elbows = [tiles['t1'][1], tiles['t2'][1], tiles['t3'][1], tiles['t4'][1]]
-lines = [tiles['t4'][1], tiles['t6'][1]]
-
-#try with individual tiles instead of equivalence classes
-#defined bags using individual tiles instead of equivalence classes 
-sevenTileBag = [tiles['t0'][1], #blank      #7-tile bag was the bag we found that led to the most natural gameplay
-                
-                tiles['t4'][1], tiles['t6'][1], #line class
-                tiles['t4'][1], tiles['t6'][1], #line class
-                
-                tiles['t1'][1], tiles['t2'][1], tiles['t3'][1], tiles['t4'][1], #elbow class
-                tiles['t1'][1], tiles['t2'][1], tiles['t3'][1], tiles['t4'][1], #elbow class
-                
-                tiles['t7'][1], #double elbow
-                tiles['t9'][1], #crossing
-                ]
+lines = [tiles['t5'][1], tiles['t6'][1]]
 
 #Gamebag is composed of 3 of the 7-tle bags. This is the bag that supplied tiles to the player during gameplay.
 gamebag = [tiles['t0'][1], #blank
            tiles['t0'][1], 
            tiles['t0'][1], 
            
-           tiles['t4'][1], tiles['t6'][1], #line class
-           tiles['t4'][1], tiles['t6'][1], 
-           tiles['t4'][1], tiles['t6'][1], 
-           tiles['t4'][1], tiles['t6'][1], 
-           tiles['t4'][1], tiles['t6'][1], 
-           tiles['t4'][1], tiles['t6'][1], 
+           tiles['t5'][1], tiles['t6'][1], #line class
+           tiles['t5'][1], tiles['t6'][1], 
+           tiles['t5'][1], tiles['t6'][1], 
+           tiles['t5'][1], tiles['t6'][1], 
+           tiles['t5'][1], tiles['t6'][1], 
+           tiles['t5'][1], tiles['t6'][1], 
            
            tiles['t1'][1], tiles['t2'][1], tiles['t3'][1], tiles['t4'][1], #elbow class
            tiles['t1'][1], tiles['t2'][1], tiles['t3'][1], tiles['t4'][1], 
@@ -79,86 +65,6 @@ gamebag = [tiles['t0'][1], #blank
            tiles['t9'][1], 
            tiles['t9'][1]
           ]
-
-#6-tile bags are all combinations of 1 tile omitted from the 7 tile distribution 
-#o???, where ??? is name of tile omited so oBlank doesn't include a blank tile 
-oBlank = [tiles['t4'][1], tiles['t6'][1], #line class
-          tiles['t4'][1], tiles['t6'][1], 
-            
-          tiles['t1'][1], tiles['t2'][1], tiles['t3'][1], tiles['t4'][1], #elbow class
-          tiles['t1'][1], tiles['t2'][1], tiles['t3'][1], tiles['t4'][1], 
-            
-          tiles['t7'][1], #double elbow
-          tiles['t9'][1], #crossing
-         ]
-
-oElbow = [tiles['t0'][1], #blank
-          
-          tiles['t4'][1], tiles['t6'][1], #line class
-          tiles['t4'][1], tiles['t6'][1], 
-          
-          tiles['t1'][1], tiles['t2'][1], tiles['t3'][1], tiles['t4'][1], #elbow class 
-          
-          tiles['t7'][1], #double elbow
-          tiles['t9'][1], #crossing
-         ]
-
-oLine = [tiles['t0'][1], #blank
-         
-         tiles['t4'][1], tiles['t6'][1], #line class
-         
-         tiles['t1'][1], tiles['t2'][1], tiles['t3'][1], tiles['t4'][1], #elbow class    
-         tiles['t1'][1], tiles['t2'][1], tiles['t3'][1], tiles['t4'][1], #elbow class 
-         
-         tiles['t7'][1], #double elbow
-         tiles['t9'][1], #crossing
-        ]
-
-#oCrossing and oDoubleElbow have equivalent results so will only define oCrossing bag
-oCrossing = [tiles['t0'][1], #blank
-             
-             tiles['t4'][1], tiles['t6'][1], #line class
-             tiles['t4'][1], tiles['t6'][1], 
-             
-             tiles['t1'][1], tiles['t2'][1], tiles['t3'][1], tiles['t4'][1], #elbow class    
-             tiles['t1'][1], tiles['t2'][1], tiles['t3'][1], tiles['t4'][1], 
-             
-             tiles['t7'][1], #double elbow
-            ]
-
-aBlank = [tiles['t0'][1], #blank
-          tiles['t0'][1], 
-          tiles['t0'][1], 
-          tiles['t0'][1],
-          tiles['t0'][1],
-          tiles['t0'][1]
-         ]
-          
-aElbow = [tiles['t1'][1], tiles['t2'][1], tiles['t3'][1], tiles['t4'][1], #elbow class
-          tiles['t1'][1], tiles['t2'][1], tiles['t3'][1], tiles['t4'][1], 
-          tiles['t1'][1], tiles['t2'][1], tiles['t3'][1], tiles['t4'][1], 
-          tiles['t1'][1], tiles['t2'][1], tiles['t3'][1], tiles['t4'][1], 
-          tiles['t1'][1], tiles['t2'][1], tiles['t3'][1], tiles['t4'][1], 
-          tiles['t1'][1], tiles['t2'][1], tiles['t3'][1], tiles['t4'][1]
-         ]
-          
-          
-aLine = [tiles['t4'][1], tiles['t6'][1], #line class
-         tiles['t4'][1], tiles['t6'][1], 
-         tiles['t4'][1], tiles['t6'][1], 
-         tiles['t4'][1], tiles['t6'][1], 
-         tiles['t4'][1], tiles['t6'][1], 
-         tiles['t4'][1], tiles['t6'][1]
-        ]
-         
-aCrossing = [tiles['t9'][1], #crossing 
-             tiles['t9'][1], 
-             tiles['t9'][1], 
-             tiles['t9'][1], 
-             tiles['t9'][1], 
-             tiles['t9'][1]
-            ]
-
 
 def combos(tilebag):
     """
@@ -311,80 +217,8 @@ def color(uniRowPermutsSC):  #Doesn't have much of a purpose. Just cool to try c
     print(Style.RESET_ALL)
     return
 
-
-#NOTE: Console may not be able display entriety of print statements because of length
-    #If you would like ot view BC and frequency of all bags once consider:
-        #1)Commenting lines 266-272 (if lines don't match up perfectly there is a note at the lines where to comment)  -OR-
-        #2)Comment all the lines that execute the boundary function (e.g. lines 326, 333, 341, 348)
-        #3)Running a few bags at a time
-#NOTE: NONE of the arguments of the functions should be changed only the value of bag 
 print('\n**GAMEBAG**')
-bag = gamebag      #can use any of the bags defined at the top or any list of 6 or more 4-element tuples 
-combos(bag)    
-permuts(uniRowCombos)
-checkSC(uniRowPermuts)
-boundary(uniRowPermutsSC)
-
-print('\n**SEVEN TILE BAG**')
-bag = sevenTileBag
-combos(bag)    
-permuts(uniRowCombos)
-checkSC(uniRowPermuts)
-boundary(uniRowPermutsSC)
-
-#oBags
-print('\n**OBLANK BAG**')
-bag = oBlank
-combos(bag)    
-permuts(uniRowCombos)
-checkSC(uniRowPermuts)
-boundary(uniRowPermutsSC)
-
-print('\n**OELBOW BAG**')
-bag = oElbow
-combos(bag)    
-permuts(uniRowCombos)
-checkSC(uniRowPermuts)
-boundary(uniRowPermutsSC)
-
-print('\n**OLINE BAG**')
-bag = oLine
-combos(bag)    
-permuts(uniRowCombos)
-checkSC(uniRowPermuts)
-boundary(uniRowPermutsSC)
-
-print('\n**OCROSSING BAG**')
-bag = oCrossing
-combos(bag)    
-permuts(uniRowCombos)
-checkSC(uniRowPermuts)
-boundary(uniRowPermutsSC)
-
-#aBags
-print('\n**ABLANK BAG**')
-bag = aBlank
-combos(bag)    
-permuts(uniRowCombos)
-checkSC(uniRowPermuts)
-boundary(uniRowPermutsSC)
-
-print('\n**AELBOW BAG**')
-bag = aElbow
-combos(bag)    
-permuts(uniRowCombos)
-checkSC(uniRowPermuts)
-boundary(uniRowPermutsSC)
-
-print('\n**ALINE BAG**')
-bag = aLine
-combos(bag)    
-permuts(uniRowCombos)
-checkSC(uniRowPermuts)
-boundary(uniRowPermutsSC)
-
-print('\n**ACROSSING BAG**')
-bag = aCrossing
+bag = gamebag     
 combos(bag)    
 permuts(uniRowCombos)
 checkSC(uniRowPermuts)
