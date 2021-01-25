@@ -9,7 +9,7 @@ This repository houses the code for the Python probability simulations for the g
       - Outputs the unique lower boundary condition of the realizable suitably connected row and respective frequency
     - The purpose of this was to determine how constraints on the tile bag impacted gameplay. 
       - Filling a Row Alogrithm--Gamebag: applies the algorithm to the gamebag
-      - Filling a Row Algorithm--6-&7-Tile Bags: applies the algorithm to 6-&7-Tiel Bags 
+      - Filling a Row Algorithm--6-&7-Tile Bags: applies the algorithm to 6-&7-Tile Bags 
   - Fill Hole
       - Calculate the probability of filling a hole in Knotris 
         - The probability of 1 through 3 tile hole types where are all edges are determined are complete
