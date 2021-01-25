@@ -222,7 +222,8 @@ def boundary(uniClusterPermsSC):
     #If you would like ot view BC and frequency of all bags once consider:
         #1)Commenting lines 196-202 (if lines don't match up perfectly there is a note at the lines where to comment)  to only show condensed outputs-OR-
         #2)Running a few bags at a time
-#NOTE: NONE of the arguments of the functions should be changed only the value of bag print('\n**SEVEN TILE BAG**')
+#NOTE: NONE of the arguments of the functions should be changed! Only the value of bag and print statement need to be changed in order to evaluate another 6- or 7-tile bag.
+print('\n**Seven Tile Bag**')
 bag = sevenTileBag
 combs(bag)    
 perms(uniClusterCombs)
